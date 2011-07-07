@@ -32,7 +32,7 @@ class Radiation(object):
 
 
 class Range(list):
-    """A conveneient class to convert frequencies and wavelengths"""
+    """A convenient class to convert frequencies and wavelengths"""
 
 
     # def set_unit(cls, unit):
@@ -64,7 +64,7 @@ class Range(list):
 
 
     def to_wave(self):
-        """docstring for freq_to_wavelength"""
+        """Convert a frequency into a wavelength"""
         if self.magnitude == 'freq':
             return Range(C / self.lower, C / self.upper, 'wave')
         else:
@@ -72,7 +72,7 @@ class Range(list):
 
 
     def to_nm(self):
-        """docstring for to_nm"""
+        """Convert a wavelength from meter to nanometer"""
         if self.magnitude == 'wave':
             return Range(self.lower / 1E9, self.upper / 1E9, 'wave')
         else:
@@ -80,7 +80,7 @@ class Range(list):
 
 
     def to_mum(self):
-        """docstring for to_mum"""
+        """Convert a wavelength from meter to micrometer"""
         if self.magnitude == 'wave':
             return Range(self.lower / 1E6, self.upper / 1E6, 'wave')
         else:
@@ -88,7 +88,7 @@ class Range(list):
 
 
     def to_freq(self):
-        """docstring for freq_to_wavelength"""
+        """Convert a wavelength into frequency"""
         if self.magnitude == 'wave':
             return Range(C / self.lower, C / self.upper, 'freq')
         else:
@@ -96,7 +96,7 @@ class Range(list):
 
 
     def to_GHz(self):
-        """docstring for to_GHz"""
+        """Convert a frequency from Hz to GHz"""
         if self.magnitude == 'freq':
             return Range(self.lower / 1E9, self.upper / 1E9, 'freq')
         else:
@@ -104,7 +104,7 @@ class Range(list):
 
 
     def to_MHz(self):
-        """docstring for to_MHz"""
+        """Convert a frequency in MHz"""
         if self.magnitude == 'freq':
             return Range(self.lower / 1E6, self.upper / 1E6, 'freq')
         else:
@@ -113,7 +113,7 @@ class Range(list):
 
 
 class EMSpectrum(object):
-    """docstring for EMSpectrum"""
+    """A class to handle Electromagnetic Spectrum wavelengths and frequencies"""
 
     def __init__(self):
         self.radio_rad       = Radiation('Radio',
@@ -137,7 +137,7 @@ class EMSpectrum(object):
 
 
     def at_freq(self, freq):
-        """docstring for at_freq"""
+        """Determine in which part of the EM spectrum the input frequency is."""
         if RADIO_FREQ_MIN < freq < RADIO_FREQ_MAX:
             print "%f is in the Radio spectrum." % freq
         elif IR_FREQ_MIN < freq < IR_FREQ_MAX:
@@ -155,7 +155,7 @@ class EMSpectrum(object):
 
 
     def at_wave(self, wave):
-        """docstring for at_wave"""
+        """Determine in which part of the EM spectrum the input wavelength is."""
         if C/RADIO_FREQ_MAX < wave < C/RADIO_FREQ_MIN:
             print "%f is in the Radio spectrum." % wave
         elif C/IR_FREQ_MAX < wave < C/IR_FREQ_MIN:
