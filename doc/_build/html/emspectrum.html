@@ -1,0 +1,203 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>EMSpectrum &mdash; EMSpectrum v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="EMSpectrum v0.1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to EMSpectrum’s documentation!" href="index.html" />
+   
+  
+  <link media="only screen and (max-device-width: 480px)" href="_static/small_flask.css" type= "text/css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to EMSpectrum’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">EMSpectrum v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="emspectrum">
+<h1>EMSpectrum<a class="headerlink" href="#emspectrum" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<span class="target" id="module-EMSpectrum"></span><dl class="class">
+<dt id="EMSpectrum.EMSpectrum">
+<em class="property">class </em><tt class="descclassname">EMSpectrum.</tt><tt class="descname">EMSpectrum</tt><a class="headerlink" href="#EMSpectrum.EMSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class to handle Electromagnetic Spectrum wavelengths and frequencies</p>
+<p>Instanciation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">EMSpectrum</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Determine in what part of the EM spectrum a given input frequency is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">at_freq</span><span class="p">(</span><span class="mf">400E9</span><span class="p">)</span>
+<span class="go">400E9 Hz is in the Infrared spectrum.</span>
+</pre></div>
+</div>
+<p>Determine in what part of the EM spectrum a given input frequency is</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">at_wave</span><span class="p">(</span><span class="mf">700E-9</span><span class="p">)</span>
+<span class="go">7.000000e-7 m is in the Visible spectrum.</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="EMSpectrum.EMSpectrum.at_freq">
+<tt class="descname">at_freq</tt><big>(</big><em>freq</em><big>)</big><a class="headerlink" href="#EMSpectrum.EMSpectrum.at_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine in which part of the EM spectrum the input frequency is.</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">freq:</th><td class="field-body">The input frequency</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.EMSpectrum.at_wave">
+<tt class="descname">at_wave</tt><big>(</big><em>wave</em><big>)</big><a class="headerlink" href="#EMSpectrum.EMSpectrum.at_wave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine in which part of the EM spectrum the input wavelength is.</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">wave:</th><td class="field-body">The input wavelength</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="EMSpectrum.MagnitudeError">
+<em class="property">exception </em><tt class="descclassname">EMSpectrum.</tt><tt class="descname">MagnitudeError</tt><a class="headerlink" href="#EMSpectrum.MagnitudeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when the magnitude is not correct</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="EMSpectrum.Range">
+<em class="property">class </em><tt class="descclassname">EMSpectrum.</tt><tt class="descname">Range</tt><big>(</big><em>upper</em>, <em>lower</em>, <em>magnitude</em><big>)</big><a class="headerlink" href="#EMSpectrum.Range" title="Permalink to this definition">¶</a></dt>
+<dd><p>A convenient class to convert frequencies and wavelengths</p>
+<dl class="method">
+<dt id="EMSpectrum.Range.to_GHz">
+<tt class="descname">to_GHz</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_GHz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a frequency from Hz to GHz</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.Range.to_MHz">
+<tt class="descname">to_MHz</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_MHz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a frequency in MHz</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.Range.to_freq">
+<tt class="descname">to_freq</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a wavelength into frequency</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.Range.to_mum">
+<tt class="descname">to_mum</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_mum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a wavelength from meter to micrometer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.Range.to_nm">
+<tt class="descname">to_nm</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_nm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a wavelength from meter to nanometer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="EMSpectrum.Range.to_wave">
+<tt class="descname">to_wave</tt><big>(</big><big>)</big><a class="headerlink" href="#EMSpectrum.Range.to_wave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a frequency into a wavelength</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to EMSpectrum&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/emspectrum.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2011, Taurus Olson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+  </body>
+</html>
