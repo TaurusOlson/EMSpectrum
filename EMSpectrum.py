@@ -1,7 +1,11 @@
 #!/usr/bin/python
 
 # CONSTANTS
-C = 3E8     # m.s-1
+
+# Speed of light (m.s-1)
+C = 3E8
+
+# Frequencies (Hz)
 RADIO_FREQ_MIN  , RADIO_FREQ_MAX   = 1     , 300E9
 IR_FREQ_MIN     , IR_FREQ_MAX      = 300E9 , 100E12
 VISIBLE_FREQ_MIN, VISIBLE_FREQ_MAX = 400E12, 800E12
@@ -58,7 +62,6 @@ class Range(list):
         self.magnitude = magnitude
 
 
-
     def __str__(self):
         return "[%.1e; %.1e]" % (self.lower, self.upper)
 
@@ -113,7 +116,23 @@ class Range(list):
 
 
 class EMSpectrum(object):
-    """A class to handle Electromagnetic Spectrum wavelengths and frequencies"""
+    """A class to handle Electromagnetic Spectrum wavelengths and frequencies
+    
+    Instanciation:
+
+    >>> e = EMSpectrum()
+
+    Determine in what part of the EM spectrum a given input frequency is
+
+    >>> e.at_freq(400E9)
+    400E9 Hz is in the Infrared spectrum.
+
+    Determine in what part of the EM spectrum a given input frequency is
+    
+    >>> e.at_wave(700E-9)
+    7.000000e-7 m is in the Visible spectrum.
+
+    """
 
     def __init__(self):
         self.radio_rad       = Radiation('Radio',
@@ -137,37 +156,46 @@ class EMSpectrum(object):
 
 
     def at_freq(self, freq):
-        """Determine in which part of the EM spectrum the input frequency is."""
+        """Determine in which part of the EM spectrum the input frequency is.
+
+            Inputs:
+                :freq: The input frequency 
+
+        """
         if RADIO_FREQ_MIN < freq < RADIO_FREQ_MAX:
-            print "%f is in the Radio spectrum." % freq
+            print "%e Hz is in the Radio spectrum." % freq
         elif IR_FREQ_MIN < freq < IR_FREQ_MAX:
-            print "%f is in the Infrared spectrum."
+            print "%e Hz is in the Infrared spectrum."
         elif VISIBLE_FREQ_MIN < freq < VISIBLE_FREQ_MAX:
-            print "%f is in the Visible spectrum." % freq
+            print "%e Hz is in the Visible spectrum." % freq
         elif UV_FREQ_MIN < freq < UV_FREQ_MAX:
-            print "%f is in the Ultraviolet spectrum." % freq
+            print "%e Hz is in the Ultraviolet spectrum." % freq
         elif X_FREQ_MIN < freq < X_FREQ_MAX:
-            print "%f is in the X spectrum." % freq
+            print "%e Hz is in the X spectrum." % freq
         elif GAMMA_FREQ_MIN < freq < GAMMA_FREQ_MAX:
-            print "%f is in the Gamma spectrum." % freq
+            print "%e Hz is in the Gamma spectrum." % freq
         else:
             print "Wrong input."
 
 
     def at_wave(self, wave):
-        """Determine in which part of the EM spectrum the input wavelength is."""
+        """Determine in which part of the EM spectrum the input wavelength is.
+
+            Inputs:
+                :wave: The input wavelength 
+        """
         if C/RADIO_FREQ_MAX < wave < C/RADIO_FREQ_MIN:
-            print "%f is in the Radio spectrum." % wave
+            print "%e m is in the Radio spectrum." % wave
         elif C/IR_FREQ_MAX < wave < C/IR_FREQ_MIN:
-            print "%f is in the Infrared spectrum."
+            print "%e m is in the Infrared spectrum."
         elif C/VISIBLE_FREQ_MAX < wave < C/VISIBLE_FREQ_MIN:
-            print "%f is in the Visible spectrum." % wave
+            print "%e m is in the Visible spectrum." % wave
         elif C/UV_FREQ_MAX < wave < C/UV_FREQ_MIN:
-            print "%f is in the Ultraviolet spectrum." % wave
+            print "%e m is in the Ultraviolet spectrum." % wave
         elif C/X_FREQ_MAX < wave < C/X_FREQ_MIN:
-            print "%f is in the X spectrum." % wave
+            print "%e m is in the X spectrum." % wave
         elif C/GAMMA_FREQ_MAX < wave < C/GAMMA_FREQ_MIN:
-            print "%f is in the Gamma spectrum." % wave
+            print "%e m is in the Gamma spectrum." % wave
         else:
             print "Wrong input."
 
