@@ -165,7 +165,7 @@ class EMSpectrum(object):
         if RADIO_FREQ_MIN < freq < RADIO_FREQ_MAX:
             print "%e Hz is in the Radio spectrum." % freq
         elif IR_FREQ_MIN < freq < IR_FREQ_MAX:
-            print "%e Hz is in the Infrared spectrum."
+            print "%e Hz is in the Infrared spectrum." % freq
         elif VISIBLE_FREQ_MIN < freq < VISIBLE_FREQ_MAX:
             print "%e Hz is in the Visible spectrum." % freq
         elif UV_FREQ_MIN < freq < UV_FREQ_MAX:
